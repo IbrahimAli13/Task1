@@ -1,0 +1,30 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Cars</h1>
+
+<table class="table table-dark table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Brand Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Color</th>
+      <th scope="col">action</th>
+    </tr>
+  </thead>
+  <tbody>
+  <%@cars.each do |cars|%>
+    <tr>
+    <th scope="row"><%=cars.id%></th>
+    <td><%=cars.brand_name%></td>
+    <td><%=cars.model%></td>
+    <td><%=cars.color%></td>
+    <td><%= link_to "show", car_path(cars.id),class:"btn btn-light" %></td>
+  </tr>
+    <%end%>
+   
+  </tbody>
+</table>
+
+
+<%= link_to "New car", new_car_path %>
